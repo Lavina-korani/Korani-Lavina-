@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <link rel="stylesheet" href="sa.css"> 
+</head>
+<body>
+    <h1> SALAVES</h1>
+    <fontstyle="border: 20px; colour="lightblue"> </fontstyle>
+
+
+    <h2>Sentiment Analysis Tool</h2>
+    <textarea id="inputText" placeholder="Enter your text here..."></textarea>
+    <button id="analyzeButton">Analyze Sentiment</button>
+
+    <div class="result" id="result" style="display: none;"></div>
+
+    <script>
+        document.getElementById('analyzeButton').addEventListener('click', function() {
+            const text = document.getElementById('inputText').value;
+            const resultDiv = document.getElementById('result');
+
+            // Simulating sentiment analysis result
+            let sentiment;
+            if (text.includes("love") || text.includes("great")) {
+                sentiment = "Positive";
+            } else if (text.includes("hate") || text.includes("bad")) {
+                sentiment = "Negative";
+            } else {
+                sentiment = "Neutral";
+            }
+
+            // Displaying the result
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = `<strong>Sentiment:</strong> ${sentiment}`;
+        });
+    </script>
+
+</body>
+</html>
